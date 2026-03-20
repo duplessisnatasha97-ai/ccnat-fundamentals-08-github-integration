@@ -37,7 +37,9 @@ jobs:
               "- NO 'we can help' or 'we'd be happy'\n" +
               "- NO generic phrases\n" +
               "- NO job titles or signatures\n" +
-              "- MUST sound like a normal human message\n\n" +
+              "- MUST sound like a normal human message\n" +
+              "- NEVER offer help, recommendations, or services\n" +
+              "- NEVER say 'happy to help' or similar phrases\n\n" +
               "STYLE:\n" +
               "- Casual, direct, conversational\n" +
               "- Like a quick message, not an email pitch\n\n" +
