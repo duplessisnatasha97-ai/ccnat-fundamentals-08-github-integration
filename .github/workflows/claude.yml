@@ -34,21 +34,19 @@ jobs:
             } catch (e) {
               fileContent = "No data.csv file found in repo.";
             }
-
-            const fullPrompt = `You are a construction business development assistant.
-
-Your job:
-- Analyse the data
-- Prioritise leads
-- Generate personalised outreach messages (email + LinkedIn)
-- Suggest follow-ups
-
-DATA:
-${fileContent}
-
-USER REQUEST:
-${prompt}`;
-
+const fullPrompt =
+ 
+   "You are a construction business development assistant.\n\n" +
+   "Your job:\n" +
+   "- Analyse the data\n" +
+   "- Prioritise leads\n" +
+   "- Generate personalised outreach messages (email + LinkedIn)\n" +
+   "- Suggest follow-ups\n\n" +
+  "DATA:\n" +
+   fileContent +
+  "\n\nUSER REQUEST:\n" +
+  prompt;
+  
             const response = await fetch("https://api.anthropic.com/v1/messages", {
               method: "POST",
               headers: {
