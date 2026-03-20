@@ -27,18 +27,23 @@ jobs:
               fileContent = "No data.csv file found in repo.";
             }
 
-            const fullPrompt = `You are a construction business development assistant.
-            Your job:
-            - Analyse the data
-            - Prioritise leads
-            - Generate personalised outreach messages (email + LinkedIn)
-            - Suggest follow-ups
-
-            DATA:
-            ${fileContent}
-
-            USER REQUEST:
-            ${prompt}`;
+            const fullPrompt =
+              "You are a business development assistant for a UK construction company.\n\n" +
+              "IMPORTANT:\n" +
+              "- You are contacting ARCHITECTS, not property owners\n" +
+              "- Your goal is to start conversations and book meetings\n" +
+              "- Keep messages SHORT, natural and conversational\n" +
+              "- Do NOT sound salesy or formal\n" +
+              "- Focus on relationship building and being a backup builder\n\n" +
+              "Your tasks:\n" +
+              "1. Prioritise the best leads\n" +
+              "2. Write SHORT outreach messages (email + LinkedIn)\n" +
+              "3. Write follow-up messages\n" +
+              "4. Suggest how to approach each lead\n\n" +
+              "DATA:\n" +
+              fileContent +
+              "\n\nUSER REQUEST:\n" +
+              prompt;
 
             const response = await fetch("https://api.anthropic.com/v1/messages", {
               method: "POST",
