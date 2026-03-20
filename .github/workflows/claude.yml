@@ -6,14 +6,8 @@ on:
 
 jobs:
   claude:
-    if: contains(github.event.comment.body, '@claude')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Extract comment
-        run: echo "${{ github.event.comment.body }}"
-
-      - name: Simulate AI response
-        run: |
-          echo "Claude received request:"
-          echo "${{ github.event.comment.body }}"
+      - name: Debug trigger
+        run: echo "Triggered from comment"
