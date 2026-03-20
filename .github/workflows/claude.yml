@@ -3,6 +3,8 @@ name: Claude Issue Handler
 on:
   issues:
     types: [opened]
+  issue_comment:
+    types: [created]
 
 jobs:
   claude:
