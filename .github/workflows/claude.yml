@@ -1,15 +1,19 @@
-name: Claude Issue Handler
+name: Claude Automation
 
 on:
-  issues:
-    types: [opened]
   issue_comment:
     types: [created]
 
 jobs:
   claude:
+    if: contains(github.event.comment.body, '@claude')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Respond to Claude mention
-        run: echo "Claude triggered"
+      - name: Extract comment
+        run: echo "${{ github.event.comment.body }}"
+
+      - name: Simulate AI response
+        run: |
+          echo "Claude received request:"
+          echo "${{ github.event.comment.body }}"
