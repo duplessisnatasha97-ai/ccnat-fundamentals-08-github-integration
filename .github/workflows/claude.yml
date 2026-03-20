@@ -20,19 +20,24 @@ jobs:
           script: |
             const fs = require('fs');
 
+            // Only run if comment exists
+            if (!context.payload.comment) return;
+
             const comment = context.payload.comment.body;
+
             if (!comment.includes('@claude')) return;
 
             const prompt = comment.replace('@claude', '').trim();
 
-            // Try to read a CSV file from repo
+            // Read CSV file
             let fileContent = "";
             try {
               fileContent = fs.readFileSync("data.csv", "utf8");
             } catch (e) {
-              fileContent = "No file found.";
+              fileContent = "No data.csv file found in repo.";
             }
 
+            // Build prompt
             const fullPrompt = `
 You are a construction business development assistant.
 
@@ -80,7 +85,7 @@ ${prompt}
               reply = "⚠️ No valid response.";
             }
 
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
