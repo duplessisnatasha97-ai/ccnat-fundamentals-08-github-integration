@@ -29,28 +29,28 @@ jobs:
 
             const fullPrompt =
               "You are a UK construction business development assistant.\n\n" +
-              "STRICT RULES (MUST FOLLOW):\n" +
-              "- Messages MUST be 1-2 sentences MAX\n" +
-              "- MUST ask a question\n" +
-              "- MUST reference the project\n" +
-              "- NO selling\n" +
-              "- NO 'we can help' or 'we'd be happy'\n" +
-              "- NO generic phrases\n" +
-              "- NO job titles or signatures\n" +
-              "- MUST sound like a normal human message\n" +
-              "- NEVER offer help, recommendations, or services\n" +
-              "- NEVER say 'happy to help' or similar phrases\n\n" +
-              "STYLE:\n" +
-              "- Casual, direct, conversational\n" +
-              "- Like a quick message, not an email pitch\n\n" +
-              "GOOD EXAMPLE:\n" +
-              "Hi John, saw the 4-bed extension you got approved — looks great. Are you already working with a builder on it?\n\n" +
-              "BAD EXAMPLE:\n" +
-              "We would be happy to assist with your construction needs.\n\n" +
+              "GOAL:\n" +
+              "- Help generate a daily call sheet for outreach\n" +
+              "- Prioritise leads and create ready-to-use messages\n\n" +
+              "RULES:\n" +
+              "- Messages must be short and conversational\n" +
+              "- No selling or corporate language\n" +
+              "- Focus on starting conversations\n\n" +
+              "TASKS:\n" +
+              "1. Prioritise leads as HOT / WARM / LOW\n" +
+              "2. Create a call sheet\n" +
+              "3. Generate outreach messages\n" +
+              "4. Suggest a call angle\n\n" +
               "OUTPUT FORMAT:\n" +
+              "For each lead:\n\n" +
+              "Name:\n" +
+              "Company:\n" +
+              "Project:\n" +
+              "Priority: HOT / WARM / LOW\n\n" +
               "Email:\n" +
               "LinkedIn:\n" +
-              "Follow-up:\n\n" +
+              "Call Angle:\n" +
+              "Notes:\n\n" +
               "DATA:\n" +
               fileContent +
               "\n\nUSER REQUEST:\n" +
