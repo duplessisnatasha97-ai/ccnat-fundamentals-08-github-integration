@@ -51,6 +51,10 @@ jobs:
               "LinkedIn:\n" +
               "Call Angle:\n" +
               "Notes:\n\n" +
+              "IMPORTANT:\n" +
+              "Also output a clean CSV format with these columns:\n" +
+              "Name,Company,Project,Priority,EmailMessage,LinkedInMessage,Status,Notes\n\n" +
+              "Make it ready for CRM upload\n" +
               "DATA:\n" +
               fileContent +
               "\n\nUSER REQUEST:\n" +
